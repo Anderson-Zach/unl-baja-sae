@@ -1,0 +1,68 @@
+/* Reset some default browser styles */
+body, h1, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* General body styling */
+body {
+  font-family: "Roboto Condensed", 'Liberation Sans Narrow', Arial, sans-serif;
+  line-height: 1.6;
+  font-weight: 500;
+  background: #F5F1E7;
+  color: #333;
+  margin: 0;
+}
+
+/* Header */
+.site-header {
+  background: #333;
+  color: #D00000;
+  padding: 1rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Navigation */
+.nav {
+  margin-top: 0.5rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  margin: 0 1rem;
+  background: linear-gradient(to top, #aaa 50%, #333 50%);
+  background-size: 100% 200%;
+  background-position: top;
+  transition: background-position 0.3s ease;
+
+}
+
+.nav-link:hover {
+      background-position: bottom;
+
+}
+
+/* Content */
+.content {
+  padding: 2rem;
+  background: white;
+  margin: 1rem auto;
+  max-width: 800px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+.site-footer {
+  background: #222;
+  color: #aaa;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
