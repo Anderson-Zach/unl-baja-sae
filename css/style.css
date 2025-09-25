@@ -92,6 +92,7 @@ p {
         text-align: center;
         margin: 0.25rem 0;
         padding-right: 0.5rem;
+        transition: none;
     }
 }
 
@@ -115,12 +116,7 @@ p {
 }
 
 /* Fullscreen hero image */
-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: right center;
-}
+
 
 /* Page title container */
 .heading-wrapper {
@@ -138,12 +134,9 @@ img {
 .heading-container h1 {
     margin: 0;
     font-size: 3rem;
-    /* bigger title */
     color: #D00000;
-    /* Husker Red */
 }
 
-/* Level headings (Platinum, Gold, etc) */
 .level-heading {
 
     text-align: center;
@@ -159,25 +152,21 @@ img {
     font-weight: 600;
 }
 
-/* Color code each level */
 .level-heading.platinum {
     background-color: #E5E4E2;
     color: #000;
 }
 
-/* silver/gray for platinum */
 .level-heading.gold {
     background-color: #FFD700;
     color: #000;
 }
 
-/* gold */
 .level-heading.silver {
     background-color: #C0C0C0;
     color: #000;
 }
 
-/* silver */
 .level-heading.bronze {
     background-color: #CD7F32;
     color: #000;
@@ -203,8 +192,16 @@ img {
     margin-bottom: 1rem;
 }
 
-
-
+img{
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+}
+.main-img{
+    display:block;
+    margin: 0 auto;
+    max-width: 900px;
+}
 .hero {
     position: relative;
     width: 100%;
@@ -216,9 +213,12 @@ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center right;
     display: block;
 }
-
+.container-heading{
+    display:inline-block
+}
 .hero-text-container {
     position: absolute;
     top: 50%;
@@ -254,7 +254,7 @@ img {
 
 /* Text inside */
 .hero-text {
-    font-size: 8rem;
+    font-size:clamp(6rem,4rem,8rem);
     font-weight: 900;
     color: #d00000;
     /* Husker red */
@@ -265,6 +265,7 @@ img {
 @media (max-width: 576px) {
     .hero-text-container {
         width: 90vw;
+        top: 70%;
         border-radius: 0 30px 30px 0;
         padding: 1rem 1.5rem;
     }
@@ -273,6 +274,37 @@ img {
         font-size: 4rem;
         text-align: center;
     }
+
+    .hero-wrapper {
+        width: 100%;
+        height: 100vh;
+        /* or whatever height you want */
+        overflow: hidden;
+        /* hides cropped parts */
+        position: relative;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 90% 50%;
+        transform: translateY(-10%);
+        /* crop 50px off the top */
+    }
+
+    .hero-image {
+        height: 100vh;
+        object-fit: cover;
+        display: block;
+    }
+    
+}
+@media (max-width: 575.98px) {
+  .content-container {
+    max-width: calc(100vw - 1rem); /* 2rem = desired space */
+    margin: 0 auto; /* center it */
+  }
 }
 
 
@@ -294,9 +326,37 @@ img {
     color: #D00000;
     /* Husker red */
 }
+
 .carousel-inner img {
-  max-width: 800px; /* limits width */
-  margin: 0 auto;   /* centers the image */
-  object-fit: cover; /* keeps aspect ratio */
+    max-width: 800px;
+    /* limits width */
+    margin: 0 auto;
+    /* centers the image */
+    object-fit: cover;
+    /* keeps aspect ratio */
 }
 
+.btn-outline-husker {
+  color: #D00000;               
+  border-color: #D00000;         
+  background-color: transparent;
+  transition: all 0.3s ease;    
+}
+
+.btn-outline-husker:hover,
+.btn-outline-husker:focus {
+  color: white;                 
+  background-color: #D00000;     
+  border-color: #D00000;
+}
+
+
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.image-wrapper button {
+  position: absolute;
+  /* top/left will be customized per button */
+}

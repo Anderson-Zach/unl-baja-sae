@@ -5,7 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UNL Baja SAE</title>
-    <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="images/favicon-48x48.png">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+
+  <link rel="icon" type="image/png" sizes="192x192" href="images/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="images/android-chrome-512x512.png">
+
+  <!-- (Optional) Web App Manifest for Android/Chrome -->
+  <link rel="manifest" href="images/site.webmanifest">
   <link rel="preload" as="image" href="images/IMG_1737.JPG">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +30,7 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNavbar">
       <div class="container d-flex align-items-center navbar-container">
         <!-- collapse (links); desktop: right-aligned, mobile: becomes dropdown in flow -->
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
@@ -42,7 +54,9 @@
 
   <main>
     <div class="hero">
-      <img src="images/IMG_1737.JPG" alt="Husker Racing Baja SAE" class="hero-image">
+      <div class="hero-wrapper">
+        <img src="images/IMG_1737.JPG" alt="Husker Racing Baja SAE" class="hero-image">
+      </div>
 
       <div class="hero-text-container">
         <div class="hero-text">
@@ -54,8 +68,11 @@
 
     <div class="container content-container mt-4 p-4">
       <h2>About Husker Racing</h2>
+
+
       <p>We design, build, and race off-road vehicles in the Baja SAE competition. Our team is made up of passionate
-        students from UNL...</p>
+        students from UNL...</p><button type="button" class="btn btn-outline-husker ms-auto"
+        onclick="window.location.href='about/index.html';">Learn More</button>
     </div>
     <div class="container content-container p-4 mt-4">
       <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-theme="dark">
@@ -66,13 +83,13 @@
             aria-label="Slide 2"></button>
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
             aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
             aria-label="Slide 4"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
             aria-label="Slide 5"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5"
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5"
             aria-label="Slide 6"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6"
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6"
             aria-label="Slide 7"></button>
         </div>
         <div class="carousel-inner">
@@ -110,7 +127,14 @@
         </button>
       </div>
     </div>
+    <div class="container content-container mt-4 p-4">
+      <h1>The Car</h1>
+      <div class="image-wrapper" style="position: relative; display: inline-block;">
+        <img class="main-img" src="images/PXL_20250925_191559867.png" alt="Image of the Car">
+        <button class="btn btn-outline-primary" style="top: 30%; left: 60%;">Electronics</button>
 
+      </div>
+    </div>
   </main>
 
   <footer class="site-footer mt-5 py-4">
