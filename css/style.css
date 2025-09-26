@@ -94,6 +94,9 @@ p {
         padding-right: 0.5rem;
         transition: none;
     }
+    #mainNavbar{
+            padding-right: 1rem;
+    }
 }
 
 /* Content */
@@ -180,6 +183,7 @@ p {
     background-color: white;
     border-radius: 50px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: wrap;
 }
 
 .content-container h1 {
@@ -298,13 +302,12 @@ img{
         object-fit: cover;
         display: block;
     }
-    
-}
-@media (max-width: 575.98px) {
-  .content-container {
+
+      .content-container {
     max-width: calc(100vw - 1rem); /* 2rem = desired space */
     margin: 0 auto; /* center it */
   }
+    
 }
 
 
@@ -356,7 +359,127 @@ img{
   display: inline-block;
 }
 
-.image-wrapper button {
-  position: absolute;
-  /* top/left will be customized per button */
+
+
+
+
+/* Image wrapper floated left */
+.image-wrapper {
+    float: left;
+    width: 60%; /* adjust width as needed */
+    margin-right: 2rem; /* space between image and card */
+    position: relative; /* keeps button and SVG in place */
+}
+
+/* Make main image responsive */
+.image-wrapper .main-img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Card floated left next to image */
+.content-container .card {
+    float: left;
+    min-width: 35%; /* adjust width as needed */
+}
+
+/* Clear floats after content container if needed */
+.content-container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.image-wrapper svg {
+    pointer-events: none;
+}
+/* Responsive: stack on small screens */
+@media (max-width: 768px) {
+    .image-wrapper,
+    .content-container .card {
+        float: none;
+        width: 100%;
+        margin: 0 0 1rem 0; /* spacing between stacked elements */
+    }
+}
+/* Base styles for all buttons */
+.image-wrapper .btn {
+    position: absolute;
+    font-size: clamp(0.75rem, 1.2vw, 1.2rem);
+    padding: clamp(0.3rem, 0.5vw, 0.5rem) clamp(0.6rem, 1vw, 1rem);
+    cursor: pointer;
+    white-space: nowrap;
+    z-index: 10;
+    background-color: #ffffff;
+    border: 2px solid #D00000;
+    color: #D00000;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.image-wrapper .btn:hover,
+.image-wrapper .btn.active {
+    background-color: #D00000;
+    color: #fff;
+}
+
+input[type="radio"]:checked + .btn {
+  background-color: #D00000;
+  color: #fff;
+}
+/* Unique positions for each button on desktop */
+#btn-body {
+    top: 76%;
+    left: 0%;
+}
+
+#btn-electronics {
+    top: 9%;
+    left: 78%;
+}
+
+#btn-susp {
+    top: 81%;
+    left: 80%;
+}
+#btn-drivetrain {
+    top: 65%;
+    left: 0%;
+}
+
+#btn-chassis {
+    top: 15%;
+    left: 0%;
+}
+
+#btn-controls {
+    top: 21%;
+    left: 81%;
+}
+.card{
+    width: 18rem;
+}
+
+/* Tablet adjustments */
+@media (max-width: 768px) {
+    .image-wrapper .btn{
+padding: 0.2rem 0.5rem;
+    }
+    #btn-body { top: 75%; left: 0%; font-size: clamp(0.7rem, 2vw, 1rem); }
+    #btn-electronics { top: 9%; left: 80%; font-size: clamp(0.7rem, 2vw, 1rem); }
+    #btn-susp { top: 81%; left: 78%; font-size: clamp(0.7rem, 2vw, 1rem); }
+    #btn-drivetrain { top: 65%; left: 0%; font-size: clamp(0.7rem, 2vw, 1rem); }
+    #btn-chassis { top: 15%; left: 0%; font-size: clamp(0.7rem, 2vw, 1rem); }
+    #btn-controls { top: 21%; left: 81%; font-size: clamp(0.7rem, 2vw, 1rem); }
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+    #btn-body { top: 75%; left: 0%; font-size: clamp(0.65rem, 2.5vw, 0.9rem); }
+    #btn-electronics { top: 8%; left: 81%; font-size: clamp(0.65rem, 2.5vw, 0.9rem); }
+    #btn-susp { top: 80%; left: 80%; font-size: clamp(0.65rem, 2.5vw, 0.9rem); }
+    #btn-drivetrain { top: 64%; left: 0%; font-size: clamp(0.7rem, 2vw, 1rem); }
+    #btn-chassis { top: 14%; left: 0%; font-size: clamp(0.7rem, 2vw, 1rem); }
+    #btn-controls { top: 21%; left: 81%; font-size: clamp(0.7rem, 2vw, 1rem); }
 }

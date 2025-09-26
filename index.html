@@ -5,19 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UNL Baja SAE</title>
-  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
 
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="48x48" href="images/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon/favicon-48x48.png">
 
-  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
 
-  <link rel="icon" type="image/png" sizes="192x192" href="images/android-chrome-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="images/android-chrome-512x512.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="favicon/android-chrome-512x512.png">
 
   <!-- (Optional) Web App Manifest for Android/Chrome -->
-  <link rel="manifest" href="images/site.webmanifest">
+  <link rel="manifest" href="favicon/site.webmanifest">
   <link rel="preload" as="image" href="images/IMG_1737.JPG">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -127,14 +127,69 @@
         </button>
       </div>
     </div>
-    <div class="container content-container mt-4 p-4">
-      <h1>The Car</h1>
-      <div class="image-wrapper" style="position: relative; display: inline-block;">
-        <img class="main-img" src="images/PXL_20250925_191559867.png" alt="Image of the Car">
-        <button class="btn btn-outline-primary" style="top: 30%; left: 60%;">Electronics</button>
 
+    <div class="container content-container mt-4 p-4">
+
+      <!-- Left: Image with button and lines -->
+      <div class="image-wrapper">
+        <img class="main-img" src="images/PXL_20250925_191559867.png" alt="Image of the Car">
+
+        <input type="radio" id="radio-body" name="car-part" value=0 hidden>
+        <label for="radio-body" id="btn-body" class="btn">Body & Ergonomics</label>
+
+        <input type="radio" id="radio-electronics" name="car-part" value=1 hidden>
+        <label for="radio-electronics" id="btn-electronics" class="btn">Electronics</label>
+
+        <input type="radio" id="radio-susp" name="car-part" value=2 hidden>
+        <label for="radio-susp" id="btn-susp" class="btn">Suspension</label>
+
+        <input type="radio" id="radio-drivetrain" name="car-part" value=3 hidden>
+        <label for="radio-drivetrain" id="btn-drivetrain" class="btn">Drivetrain</label>
+
+        <input type="radio" id="radio-controls" name="car-part" value=4 hidden>
+        <label for="radio-controls" id="btn-controls" class="btn">Controls</label>
+
+        <input type="radio" id="radio-chassis" name="car-part" value=5 hidden>
+        <label for="radio-chassis" id="btn-chassis" class="btn">Chassis</label>
+
+
+        <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+          <line x1="50%" y1="50%" x2="35%" y2="80%" stroke="black" stroke-width="2"></line>
+          <line x1="20%" y1="80%" x2="35.15%" y2="80%" stroke="black" stroke-width="2"></line>
+
+          <line x1="60%" y1="6%" x2="65%" y2="13%" stroke="black" stroke-width="2"></line>
+          <line x1="65%" y1="13%" x2="90%" y2="13%" stroke="black" stroke-width="2"></line>
+
+          <line x1="59%" y1="55%" x2="70%" y2="85%" stroke="black" stroke-width="2"></line>
+          <line x1="70%" y1="85%" x2="90%" y2="85%" stroke="black" stroke-width="2"></line>
+
+          <line x1="32%" y1="40%" x2="24%" y2="70%" stroke="black" stroke-width="2"></line>
+          <line x1="24%" y1="70%" x2="10%" y2="70%" stroke="black" stroke-width="2"></line>
+
+          <line x1="40%" y1="4%" x2="30%" y2="19%" stroke="black" stroke-width="2"></line>
+          <line x1="30.1%" y1="19%" x2="10%" y2="19%" stroke="black" stroke-width="2"></line>
+
+          <line x1="52%" y1="31%" x2="70%" y2="25%" stroke="black" stroke-width="2"></line>
+          <line x1="70%" y1="25%" x2="90%" y2="25%" stroke="black" stroke-width="2"></line>
+        </svg>
       </div>
+
+      <!-- Right: Card -->
+      <div class="card" >
+        <img src="" class="card-img-top" id="desc-img" alt="...">
+        <div class="card-body">
+          <h5 class="card-title" id="desc-title">Subsytem</h5>
+          <p class="card-text" id="desc-text">Select a subsystem to learn more about it!</p>
+          <a href="subsystems/index.html" id="desc-info" class="btn btn-outline-husker">Learn more</a>
+        </div>
+      </div>
+
+      <div style="clear: both;"></div> <!-- ensures content below floats properly -->
+
     </div>
+
+
+
   </main>
 
   <footer class="site-footer mt-5 py-4">
@@ -158,6 +213,8 @@
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
   <script src="js/index.js"></script>
+  <script src="js/diagram.js"></script>
+
 </body>
 
 </html>
