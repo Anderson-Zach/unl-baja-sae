@@ -460,6 +460,9 @@ input[type="radio"]:checked + .btn {
 .card{
     width: 18rem;
 }
+.card-text{
+    min-height: 8rem;
+}
 
 /* Tablet adjustments */
 @media (max-width: 768px) {
